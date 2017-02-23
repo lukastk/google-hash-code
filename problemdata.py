@@ -1,9 +1,12 @@
 # DOCUMENTATION
 """
-Usage:
-from problemdata.py import *
+### To use it, copy these lines of code:
 
+from problemdata.py import *
 (V, E, R, C, X, K, endpoint_data, cache_connections, requests) = import_data("kittens.in")
+
+
+### Explanation of data structures:
 
 endpoint_data[i][ENDP_LATENCY] - latency of video requeset from data center to this endpoint (miliseconds)
 endpoint_data[i][ENDP_NUM_OF_CACHES] - the number of cache servers that this endpoint is connected to
