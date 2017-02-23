@@ -1,4 +1,5 @@
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # DOCUMENTATION
 """
@@ -11,8 +12,8 @@ from problemdata import *
 
 vid_sizes[i] - Size of video i
 
-endpoint_data[i][DATA_CONNECTION_LATENCY] - latency of video requeset from data center to this endpoint (miliseconds)
 endpoint_data[i][ENDP_NUM_OF_CACHES] - the number of cache servers that this endpoint is connected to
+endpoint_data[i][DATA_CONNECTION_LATENCY] - latency of video requeset from data center to this endpoint (miliseconds)
 
 cache_connections[i] - List of connections from endpoint i
 cache_connections[i][j] - The jth connection form endpoint i
@@ -26,8 +27,8 @@ requests[i][NUM_OF_REQUESTS] - the number of requests
 """
 
 # CONSTANTS
-DATA_CONNECTION_LATENCY = 0
 ENDP_NUM_OF_CACHES = 1
+DATA_CONNECTION_LATENCY = 0
 
 CACHE_ID = 0
 CONNECTION_LATENCY = 1
@@ -38,7 +39,7 @@ NUM_OF_REQUESTS = 2
 
 
 def import_data(fname):
-    f = open("kittens.in" , "r")
+    f = open(fname , "r")
 
     # First line
 
@@ -47,18 +48,16 @@ def import_data(fname):
     vid_sizes = tuple([int(p) for p in f.readline().split()])
 
     endpoint_data = []
+    cache_connections = []
 
     for i in range(E):
         endp = tuple([int(p) for p in f.readline().split()])
         endpoint_data.append(endp)
 
-    cache_connections = []
-
-    for i in range(E):
-        K = endpoint_data[i][ENDP_NUM_OF_CACHES]
+        K = endp[ENDP_NUM_OF_CACHES]
         conn = []
 
-        for i in range(K):
+        for j in range(K):
             c = tuple([int(p) for p in f.readline().split()])
             conn.append(c)
 

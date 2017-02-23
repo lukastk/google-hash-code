@@ -1,5 +1,5 @@
 from problemdata import ENDP_LATENCY, ENDP_NUM_OF_CACHES, CACHE_ID, CONNECTION_LATENCY, VIDEO_ID, ENDPOINT_ID, NUM_OF_REQUESTS
-# implement 
+# implement
 VIDEO_IDS = 0
 def score(requests, cache_servers, cache_connections, endpoint_data):
 	score = 0
