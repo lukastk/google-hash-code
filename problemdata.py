@@ -69,4 +69,4 @@ def import_data(fname):
         r = [int(p) for p in f.readline().split()]
         requests.append(r)
 
-    return (V, E, R, C, X, K, endpoint_data, cache_connections, requests)
+    return (V, E, R, C, X, K, vid_sizes, endpoint_data, cache_connections, requests)
